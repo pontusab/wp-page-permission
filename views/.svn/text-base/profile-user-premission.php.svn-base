@@ -1,0 +1,18 @@
+<table class="form-table" id="premission-field">
+	<tbody>
+		<tr class="form-field">
+			<th scope="row"><label for="premission">Begränsa till sida </label></th>
+			<td>
+				<?php 
+					wp_dropdown_pages([
+					    'selected' 			=> get_user_meta( $user->ID, 'premission', true), 
+						'name' 			    => 'premission', 
+						'id' 			    => 'premission',
+						'show_option_none'  => 'Ingen sida vald',
+						'option_none_value'	=> false
+					]); ?>
+				<p class="description">Ange en sida som denna användare kan administrera. Användaren kommer även kunna lägga till undersidor.</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
